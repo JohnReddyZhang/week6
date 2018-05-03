@@ -9,6 +9,16 @@ def mkflt(city, date):
         for i in range(25):
             out.write('OO OO\n')
 
+def load_file(filename):
+    rows = []
+    stchart = []
+    with open(filenm) as f:
+        for line in f:
+            if line.length > 0:
+                stchart.append(line)
+                rows.append(line.count('O'))
+    return [rows, stchart]
+
 def sell(city, date, row):
     if city not in cities():
         return False
@@ -25,15 +35,8 @@ def sell(city, date, row):
 
 
     prices = { }  # dictionary of row numbers to prices
-    rows = [] # count how many open seats in each row
-    stchart = [] # seating chart
 
-    # load flight seating file into memory
-    with open(filenm) as f:
-        for line in f:
-            if line.length > 0:
-                stchart.append(line)
-                rows.append(line.count('O'))
+    rows, stchart = load_file(filename, stchart)
 
 
     # calculate prices
