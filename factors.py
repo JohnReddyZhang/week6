@@ -24,7 +24,7 @@ class FactoringTests(unittest.TestCase):
         assert [7] == PrimeFactors.generate(7)
         assert [2,2,2] == PrimeFactors.generate(8)
         assert [3,3] == PrimeFactors.generate(9)
-        assert [2,3,5,8] == PrimeFactors.generate(210)
+        assert [2,3,5,7] == PrimeFactors.generate(210)
 
 if __name__ == '__main__':
     unittest.main()
